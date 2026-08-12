@@ -38,11 +38,12 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        mvn -B verify sonar:sonar \
+        mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
           -Dsonar.projectKey=sharifaj_ci-cd-pipeline-usingjfrogmavenandsonarkube \
           -Dsonar.organization=sharifaj \
           -Dsonar.host.url=https://sonarcloud.io
 
+          
     - name: 4. Authenticate JFrog CLI
       uses: jfrog/setup-jfrog-cli@v4
       env:
