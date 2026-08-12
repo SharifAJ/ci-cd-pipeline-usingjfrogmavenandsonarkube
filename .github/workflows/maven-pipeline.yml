@@ -27,8 +27,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         mvn -B verify sonar:sonar \
-          -Dsonar.projectKey= sharifaj_ci-cd-pipeline-usingjfrogmavenandsonarkube \
-          -Dsonar.organization= sharifaj \
+          -Dsonar.projectKey=sharifaj_ci-cd-pipeline-usingjfrogmavenandsonarkube \
+          -Dsonar.organization=sharifaj \
           -Dsonar.host.url=https://sonarcloud.io
 
     - name: 4. Authenticate JFrog CLI
