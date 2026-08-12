@@ -40,7 +40,7 @@ jobs:
 
     - name: 5. Publish to JFrog Artifactory
       run: |
-        # Configure JFrog to deploy to your default local release repository
-        jf mvn-config --repo-deploy-releases default-maven-local 
+        # Configure JFrog to deploy both releases and snapshots
+        jf mvn-config --repo-deploy-releases default-maven-local --repo-deploy-snapshots default-maven-local
         # Execute the Maven deployment via JFrog
         jf mvn clean install -U
